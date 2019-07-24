@@ -3,14 +3,6 @@
 @import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
-/*"""
-Georgia Institute of Technology - CS1301
-Lab02 - Data Analysis
-"""
-__author__ = """ Gursimran Singh """
-__collab__ = """ I worked on the homework assignment alone, using this semester's course materials and referring to Stack Overflow and Matplotlib's Documentation """
-"""
-"""*/
 
 body {
     font-family: 'Roboto Slab';

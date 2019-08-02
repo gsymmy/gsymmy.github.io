@@ -1,122 +1,39 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
-@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
-
-body {
-    font-family: 'Roboto Slab';
-    color: #7f8c8d;
-    background-color: #fefefe;
-    margin-top: 2em;
+body{
+    background-color: black;
+    font-family: "Poppins", sans-serif;
 }
 
-h1, h2, h3 {
-    font-family: 'Roboto Slab';
-}
-#navbar > ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 100%;
-    text-align: center;
+#mainNavbar{
+    background-color: black;
 }
 
-#navbar > ul > li {
-    margin: 0 2em;
-    display: inline-block;
-    float: right;
-    border-bottom: solid #7f8c8d 2px;
-    position: relative;
+#mainNavbar .nav-link{
+    color:grey;
+    font-size: 1.2rem;
 }
 
-.nav-link {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    text-decoration: none;
+#mainNavbar .nav-link:hover{
+    color:white;
 }
 
-a {
-    color: #7f8c8d;
-}
-img{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border:0px solid #021a40;
-}
-#img1 {
-    border-radius: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+#mainNavbar .navbar-brand{
+    color:white;
+    font-size: 1.2rem;
 }
 
-#intro {
-    font-size: 3em;
+.fa-white{
+    color: white;
 }
 
-#about {
-    text-align:center;
+.github-black{
+    color: black;
 }
 
-#fancy {
-    color: #164ea8;
-    text-decoration: bold;
-}
-.paratext {
-  padding-left: 200px;
-  padding-right: 200px;
-  margin-bottom: 100px;
-}
-.paranal {
-  padding-left:50px;
+.twitter-blue{
+    color: #1EA1F2;
 }
 
-.foot{
-  margin-top: 200px;
-}
-.footext{
-  text-align:center;
-  color:#178AB2;
-
-}
-.fa {
-  padding: 15px;
-  font-size: 20px;
-  width: 10px;
-  text-align: center;
-  text-decoration: none;
-
+.instagram-pink{
+    color: #C13584
 }
 
-/* Add a hover effect if you want */
-.fa:hover {
-  opacity: 0.7;
-}
-
-/* Set a specific color for each brand */
-
-/* Facebook */
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-
-}
-
-/* Twitter */
-.fa-twitter {
-  background: #55ACEE;
-  color: white;
-}
-
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
-
-.fa-instagram {
-  background: #125688;
-  color: white;
-}

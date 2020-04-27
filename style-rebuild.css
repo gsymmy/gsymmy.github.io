@@ -4,38 +4,13 @@ html {
 
 html,
 body {
-    height: 98%;
     background: #eff4f3;
 }
 
-.landing {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-}
-
-.avatar {
-    padding: 0;
-    height: 17rem;
-    border-radius: 50%;
-    border: solid 2px;
-    border-color: white;
-}
-
-.bottom-links {
-    margin-right: 14.7%;
-    margin-left: 14.7%;
+.cover-div {
     text-align: center;
-    display: inline;
-    color: black;
 }
 
-.bottom-links>a {
-    color: black;
-}
-
-.cnn {
-    width: 5%;
+.cover {
+    text-align: center;
 }

@@ -4,13 +4,68 @@ html {
 
 html,
 body {
-    background: #eff4f3;
+    height: 100%;
+    background: white;
 }
 
-.cover-div {
-    text-align: center;
+.links-row>a {
+    margin: 1%;
 }
 
-.cover {
-    text-align: center;
+.intro {
+    margin-top: 10%;
+    margin-bottom: 20%;
+}
+
+.links-row {
+    display: inline;
+}
+
+.profile-pic {
+    width: 65%;
+    margin-top: 10%;
+    border-radius: 50%;
+}
+
+p {
+    font-size: 150%;
+}
+
+.about {
+    max-width: 95%;
+    margin-top: 13%;
+    line-height: 1.6;
+}
+
+.media-icon {
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.media {
+    margin-top: 10%;
+}
+
+.icon-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-tab {
+    background: #FFFFFF;
+}
+
+.git-icon {
+    margin-right: 1%;
+}
+
+.repo-replica {
+    color: #0466D6;
+}
+
+.repo-table {
+    border-collapse: separate;
+    border: solid 0.5px #D1D5DA;
+    border-radius: 2%;
 }

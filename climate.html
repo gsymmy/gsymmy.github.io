@@ -1,0 +1,643 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Exploring the Climate Tech Vertical</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="49c6b9c9-ab45-46ea-96b8-24d9e87e2ee8" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjYzOTIxfQ" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🌎</span></div><h1 class="page-title">Exploring the Climate Tech Vertical</h1></header><div class="page-body"><p id="5ef8f9c7-49e4-4d72-ad48-c51fc26081a7" class="">Bragiel Brothers - Test Project</p><p id="84e8b113-7b96-4117-923e-1d72f6d2f69c" class="">By <a href="https://www.linkedin.com/in/pingthesingh/">Gursimran Singh</a></p><p id="da1ce63c-f11c-4e37-92d0-5369806d03b9" class="">
+</p><h3 id="054aee2a-e173-469f-a2f1-2b5d47e5652d" class="">Definition</h3><p id="64478fa0-7ecd-456f-87ab-c7375c7f32c9" class="">Climate Tech or Clean Tech (used more often) is any product or service that aims to reduce negative environmental impact. This can be through inventing and implementing new materials/processes, using sustainable alternatives, increasing efficiency of current systems or educating people. All-in-all anything that keeps ice from melting, sea-levels from rising, heat waves from becoming common etc. (more visible changes, but definitely not limited to these).</p><p id="0edcf725-f6aa-4bbc-a83f-6192690dfa07" class="">
+</p><blockquote id="93e7c4b8-ea75-427d-b484-c4bcce84202f" class="">Green technologies—going green—is bigger than the Internet. It could be the biggest economic opportunity of the 21st century.</blockquote><h1 id="c457c9cc-2ead-426d-98b4-e5c3f14ef226" class="">Introduction</h1><p id="3212bdb0-f6a9-4563-9f13-7ab34dcf95e1" class="">Two Scenarios.</p><p id="f4b1cf91-8ea3-4e81-b043-690c1a39e598" class="">
+</p><p id="f651ee45-9aca-4134-a8c1-fc7b2ef6da2a" class=""><u>Scenario 1</u>: It&#x27;s 2050 - our cars still run on fossil fuel, large factories are still powered by coal. We have failed to use renewable tech at scale. Miami and New Orleans are under water and NYC is the new Bahrain of heat waves. Climate change is our biggest fight. </p><p id="452eb1e8-5669-430a-a1ab-59de02743fff" class=""><u>Scenario 2</u>: It&#x27;s 2050 - we realized a few things in 2020 and have taken action. Renewable energy is the only source we&#x27;re exploiting, cars are all-electric. Water in Delhi is as clean as that in Switzerland. But, climate change is still our biggest fight. </p><p id="dc0bc8ec-21f6-4ea9-9475-8f078db076ff" class="">
+</p><p id="20870645-7890-42b3-a745-f8b5aa4e33a6" class="">In both the scenarios, there are solar farms that existed in 2020 and new ideas to battle the climate change were being generated every now and then. So why the huge difference? Venture Capital has helped finance the the world we are living in right now and it is time that a majority of those investments are directed towards Clean Tech. </p><h1 id="81fc1063-00f1-4734-a0ec-a213f61697b3" class="">The Market</h1><p id="c948b0b0-0663-4934-a384-2a213fca63bd" class="">VC investments in Clean Tech and the returns have not been consistent. The market has changed considerably over the past two decades. </p><p id="2affc464-4068-4108-b89c-a47a902fd4d3" class=""><strong>Here I have picked up two timeframes to analyze this: 2005-2011 saw a VC boom but most of these investments were not very successful. I have tried to break that down to understand what we can learn from it which can be applied to crack the current Clean Tech market.</strong> </p><h2 id="6d71add3-7c9d-4214-aa51-c06066906496" class=""><u>2005 - 2011 Boom and Bust</u></h2><p id="fc366f51-5059-4783-acd6-bb3673824fe1" class="">Source: <a href="https://energy.mit.edu/wp-content/uploads/2016/07/MITEI-WP-2016-06.pdf">MIT Energy Initiative - Venture Capital and Clean-tech</a></p><p id="a3971e5c-7b1f-4e88-8ca9-cf8d49863d23" class="">
+</p><p id="e5b9282a-d190-4117-8822-d2862f7ac640" class="">From 2005 to 2011, VC investors had plowed $25 billion into the clean-tech sector and lost over half of it. In 2008, VC clean-tech investments exceeded $5 billion. By 2013 funding had dropped to $2 billion. As a result of the lack of capital, only 24 clean-tech companies were founded in 2013, compared with 75 companies in 2007.</p><p id="6f0a4849-bc5d-4eeb-89ab-09a9a0c08b0c" class="">
+</p><p id="49640eb2-f930-434f-b3ba-4061ec71c06f" class="">The VC model did not seem suitable for the clean-tech innovation. Why so?</p><ul id="768caeed-b644-45e6-8d20-6fb8c376f284" class="bulleted-list"><li>Clean-tech startups required significant capital early</li></ul><ul id="ef59fdb5-2a42-42da-b0c8-b9aaaadcabdf" class="bulleted-list"><li>Had long development timelines</li></ul><ul id="ada4aaf6-7e29-4268-bb78-12cf7f05e55c" class="bulleted-list"><li>Were uncompetitive in commodity market</li></ul><ul id="8ea7b6c0-ac57-4bed-ae7f-2a0ea9d7e5c6" class="bulleted-list"><li>Could not attract corporate acquirers</li></ul><p id="38ad56a8-59e9-4f7b-84c3-158cedcda199" class="">
+</p><p id="79725a94-05d1-4fdb-8fd2-fc49752f19a0" class="">VCs look to invest in startups that quickly achieve scale to address a high-growth market and provide large payoffs within a short time frame. Some clean-tech startups during this time did fit in this model - <strong>Nest and Opower were both founded during this time and were later acquired by Google and Oracle for $3.2B and $532M respectively</strong>. Many other smaller startups with similar sub-sectors and target audiences did well too. </p><h3 id="be1728dd-6909-4ad8-ade2-ca2c205e4518" class="">Breaking Clean-Tech by Themes</h3><p id="4e3d564e-baf4-408d-b448-f21c694e1098" class="">Nest and Opower provide us an insight into what VCs did well when they invested in these companies. </p><ul id="52142a50-b187-4a4b-b109-841274ad58a1" class="bulleted-list"><li>All clean-tech isn&#x27;t same</li></ul><ul id="175ff436-6851-4d36-a591-c4003601a97b" class="bulleted-list"><li>Clean-tech software startups performed much better on returns</li></ul><p id="97dfa75a-bcce-476d-9841-d6c1756e23e8" class="">
+</p><p id="2a8c4d9e-ccee-441c-b7bc-69eb513d04fa" class="">This graphic explains it better.</p><figure id="da2057a7-029d-4672-8110-1a186d299cd7" class="image"><a href="Exploring%20the%20Climate%20Tech%20Vertical%20da2057a7029d467281101a186d299cd7/ITrens.png"><img style="width:4320px" src="Exploring%20the%20Climate%20Tech%20Vertical%20da2057a7029d467281101a186d299cd7/ITrens.png"/></a></figure><p id="cc0b92ba-2fe4-41cb-b206-37b9556434e6" class="">The market also responded in a similar manner over time. </p><figure id="fe427740-6dec-4af8-8ef1-bf58a055e728" class="image"><a href="Exploring%20the%20Climate%20Tech%20Vertical%20da2057a7029d467281101a186d299cd7/Screen_Shot_2020-07-11_at_12.00.59_PM.png"><img style="width:2606px" src="Exploring%20the%20Climate%20Tech%20Vertical%20da2057a7029d467281101a186d299cd7/Screen_Shot_2020-07-11_at_12.00.59_PM.png"/></a></figure><p id="9e070ce9-c430-4ed6-8977-4e725d958e44" class="">
+</p><p id="86b3e266-8479-4ae6-a852-b0dcd5503e02" class=""><strong>What can be learned from this?</strong></p><ul id="3ca54e28-1852-4c6a-8778-5626823fe710" class="bulleted-list"><li>VC funding is needed to support clean-tech</li></ul><ul id="c57a5598-686c-4ea9-aedf-65a17dbb51d3" class="bulleted-list"><li>“Moving fast” might work for a consumer mobile app or a back office SaaS product, the clean-tech sector tends to involve highly regulated, capital intensive, mission critical infrastructure (a better analysis <a href="https://davidmytton.blog/the-data-behind-49bn-of-cleantech-investment/">here</a>)</li></ul><ul id="28d1d3fe-a772-4a42-8abd-d721147dc1cd" class="bulleted-list"><li><strong>But still, Early Stage VC funds aiming to move quickly can focus more on clean-tech software startups with a B2C or a B2B model and promising returns</strong></li></ul><ul id="8907ea6b-d527-493e-a249-e5e8b88dd341" class="bulleted-list"><li>Large Funds can collaborate with Government Office to support clean-tech R&amp;D at a larger scale</li></ul><p id="427366b2-0190-498a-bb42-38140318fe65" class="">
+</p><h2 id="76d65328-1a2c-4e56-94b5-7cfb252de062" class=""><u>Market Today : Finding the right Clean Tech Opportunity</u></h2><p id="f2cae9ad-992d-4134-afbd-aa457eb9de43" class="">
+</p><p id="27b12273-b384-4708-a21d-591c8eb9b30d" class="">In 2013, S&amp;P Index along with Russell 3000 gained 31%. Sounds like an exceptional result? Well, it might be still be a bit shy of how clean-tech companies have performed. <strong>Income and appreciation combined, clean-tech companies had a 40% return totaling up to $946 Billion in 2019 - more than 3 times what it was in 2010. </strong>By contrast, revenues for the 28 companies in the S&amp;P Energy Index, a mostly fossil-fuel crowd, declined 5% in 2019. <strong>Falling costs</strong> and a <strong>decreasing perception of risk</strong> have significantly enabled renewable energy implementation over the past decade, and led to expanding mainstream capital investing in the space.</p><p id="5ab7f438-b4f0-415a-8763-6fb2be519a1e" class="">
+</p><figure id="80eb5640-e2bf-4ab4-ab44-65cce892506b" class="image"><a href="Exploring%20the%20Climate%20Tech%20Vertical%20da2057a7029d467281101a186d299cd7/bloomberg.png"><img style="width:1200px" src="Exploring%20the%20Climate%20Tech%20Vertical%20da2057a7029d467281101a186d299cd7/bloomberg.png"/></a></figure><p id="083163b7-4486-425b-833e-7be7bac2e7f9" class="">
+</p><h2 id="020ccfc9-e443-407d-9e58-d0ce5b56f7b5" class="">Top Players in the Clean-Tech Space</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6be9ec4b-84be-42f8-923d-0c9e600a775a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">All data has been collected from Crunchbase and can be found on this <a href="https://airtable.com/shrwea4QNGnDDaLjU">Airtable</a></div></figure><p id="cad0fe7b-1b66-4910-9adb-ad4c6fa8de00" class="">
+</p><p id="8a6cd593-c15b-4873-8fe8-dbf2671921c0" class="block-color-yellow_background">I have sourced the top players in the clean-tech space (people, companies and investors). They can be viewed down below (I suggest that you expand the Airtable for the better view or simply click <a href="https://airtable.com/shrwea4QNGnDDaLjU/tblxgGijAYA2JvlMP/viwNbHAvzpouxgXMU?blocks=hide">here</a>)</p><p id="256ea1be-8cb8-404b-835b-cabcee059968" class="">
+</p><p id="6298a248-9442-471e-af49-336ce3457b97" class="">This is what my research includes:</p><ul id="b27351d0-1801-41e9-bc16-bb28075e342d" class="bulleted-list"><li>Early Stage Startups and Companies with their Founders and Investors</li></ul><ul id="fe994b85-76d9-4a2f-a430-b62f790a60b5" class="bulleted-list"><li>Late Stage Startups and Companies with their Founders and Investors</li></ul><ul id="49acdcb1-aa8e-481f-88a6-21cd536babe0" class="bulleted-list"><li>Top Investors in the Clean-Tech space</li></ul><ul id="b80546c9-dfdf-46d6-a582-69e577167fba" class="bulleted-list"><li>Top Locations</li></ul><ul id="9e083b43-5b83-472e-b5e2-ba3542f35d62" class="bulleted-list"><li>Founders and their LinkedIns</li></ul><ul id="9face644-1df1-4af3-8748-eb0647b4252f" class="bulleted-list"><li>Investors for the companies in this list</li></ul>
+<iframe class="airtable-embed" src="https://airtable.com/embed/shrwea4QNGnDDaLjU?backgroundColor=red" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+<p id="d0f29c81-66c8-4aa1-a459-e1b3610290d4" class="">
+</p><p id="c59b9acc-56d8-43cf-918f-4126a436ebbe" class="">
+</p><p id="a3895119-eba3-47b8-9ade-86a39b6c8850" class="">
+</p><p id="da5b210a-31a9-45d4-ad56-b2e4a98fb263" class="">
+</p></div></article></body></html>
